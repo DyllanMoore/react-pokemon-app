@@ -1,6 +1,7 @@
 import './App.css';
 import { useState } from "react";
 import Axios from "axios";
+import { DisplayPokemon } from './components/displayPokemon';
 
 function App() {
 
@@ -46,16 +47,17 @@ function App() {
         {!pokemonChosen ? (
           <h1>Please choose a pokemon</h1>
         ) : (
-          <div>
-            <h1>{pokemonName}</h1>
-            <img src={pokemon.img} />
-            <h3>Species: {pokemon.species}</h3>
-            <h3>HP: {pokemon.hp}</h3>
-            <h3>Attack: {pokemon.attack}</h3>
-            <h3>Defense: {pokemon.defense}</h3>
-            <h3>Type: {pokemon.type}</h3>
-          </div>
+          <DisplayPokemon
+            name={pokemonName}
+            img={pokemon.img}
+            species={pokemon.species}
+            hp={pokemon.hp}
+            attack={pokemon.attack}
+            defense={pokemon.defense}
+            type={pokemon.type}
+          />
         )}
+
       </div>
     </div>
   );
